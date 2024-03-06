@@ -13,6 +13,21 @@ const navigation = [
   { name: "Help Center & Community", href: "#" },
 ];
 
+const card = [
+  {
+    label: "1. Click Capture",
+    desc: "Once you install the Chrome extension, fire it up, and click “Capture”.",
+  },
+  {
+    label: "2. Perform Your Actions",
+    desc: "Once capturing, Wizardshot carefully monitors what you do to understand how to document it.",
+  },
+  {
+    label: "3. ✅ Done. Article Written",
+    desc: "Wizardshot carefully crafts the perfect article based off your actions recorded. Just click “Done” and we’ll write up the article in a second.",
+  },
+];
+
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -177,16 +192,28 @@ export default function Home() {
             />
 
             <div className="grid sm:grid-cols-3 grid-cols-1 gap-4 mt-10">
-              {[1, 2, 3].map((item) => (
-                <ImageNext
-                  key={item}
-                  src={`/img-${item}.png`}
-                  width={297}
-                  priority
-                  height={234}
-                  alt="logo-klikyou"
-                  className="h-auto sm:w-auto w-full"
-                />
+              {card.map((item, index) => (
+                <div className="space-y-4" key={item.label}>
+                  <ImageNext
+                    src={`/img-${index + 1}.png`}
+                    width={297}
+                    priority
+                    height={234}
+                    alt="logo-klikyou"
+                    className="h-auto sm:w-auto w-full"
+                  />
+
+                  <div>
+                    <Text
+                      label={item.label}
+                      className="font-normal text-left tracking-tight text-gray-900"
+                    />
+                    <Text
+                      label={item.desc}
+                      className="text-xs text-left font-light tracking-tight text-gray-900"
+                    />
+                  </div>
+                </div>
               ))}
             </div>
 
