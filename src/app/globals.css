@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-gradient {
+    border: 10px solid;
+    background: linear-gradient(180deg, #ab96f8 0%, #ff99d0 100%);
+    border-radius: 10px;
+  }
+}

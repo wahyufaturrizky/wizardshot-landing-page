@@ -1,14 +1,16 @@
 "use client";
+import Button from "@/components/Button";
 import ImageNext from "@/components/Image";
+import Text from "@/components/Text";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 
 const navigation = [
-  { name: "Product", href: "#" },
+  { name: "Home", href: "#" },
   { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "About", href: "#" },
+  { name: "Help Center & Community", href: "#" },
 ];
 
 export default function Home() {
@@ -21,10 +23,13 @@ export default function Home() {
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
+              <ImageNext
+                src="/logo.svg"
+                width={112.87}
+                priority
+                height={20}
+                alt="logo-klikyou"
+                className="h-[20px] w-auto"
               />
             </a>
           </div>
@@ -49,10 +54,31 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-end lg:gap-2">
+            <Text label="Login" className="text-sm font-light leading-6 text-gray-900 mb-2" />
+
+            <div className="flex flex-col items-center gap-1">
+              <Text
+                label="100% free, forever 🤑"
+                className="text-sm font-light leading-6 text-gray-900"
+              />
+
+              <Button
+                className="py-2 px-4 rounded-md bg-[#18181C] text-white flex items-center gap-2"
+                type="button"
+                label="Install Wizardshot"
+                icon={
+                  <ImageNext
+                    src="/chrome.svg"
+                    width={19.19}
+                    priority
+                    height={19.19}
+                    alt="logo-klikyou"
+                    className="h-auto w-auto"
+                  />
+                }
+              />
+            </div>
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -117,33 +143,62 @@ export default function Home() {
           />
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding.{" "}
-              <a href="#" className="font-semibold text-indigo-600">
-                <span className="absolute inset-0" aria-hidden="true" />
-                Read more <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-          </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              Data to enrich your online business
+              Your Magic Wand for Instant Documentation
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-              commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+              Turn ANY process into a simple step-by step Guide
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Get started
-              </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                Learn more <span aria-hidden="true">→</span>
-              </a>
+              <Button
+                className="py-2 px-4 rounded-md bg-[#18181C] text-white flex items-center gap-2"
+                type="button"
+                label="Install Wizardshot →"
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-10">
+            <ImageNext
+              src="/play.png"
+              width={596.75}
+              priority
+              height={596.75}
+              alt="logo-klikyou"
+              className="h-auto w-full object-cover bg-gradient"
+            />
+          </div>
+
+          <div className="text-center mt-10">
+            <Text
+              label="Say Goodbye To Writing Docs, and Hello To Wizardshot Doing it for YOU."
+              className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+            />
+
+            <div className="grid sm:grid-cols-3 grid-cols-1 gap-4 mt-10">
+              {[1, 2, 3].map((item) => (
+                <ImageNext
+                  key={item}
+                  src={`/img-${item}.png`}
+                  width={297}
+                  priority
+                  height={234}
+                  alt="logo-klikyou"
+                  className="h-auto sm:w-auto w-full"
+                />
+              ))}
+            </div>
+
+            <div className="mt-6">
+              <Text
+                label="+32 MORE FEATURES"
+                className="text-lg leading-8 text-gray-600 font-bold underline underline-offset-4"
+              />
+              <Text
+                label="INCLUDING A KB INTEGRATION"
+                className="text-lg leading-8 text-gray-600"
+              />
             </div>
           </div>
         </div>
