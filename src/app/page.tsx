@@ -139,7 +139,7 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:pt-56 lg:pb-10">
+        <div className="mx-auto max-w-2xl pb-6 sm:pt-6 pt-6 lg:pt-56 lg:pb-10">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Your Magic Wand for Instant Documentation
@@ -213,11 +213,17 @@ export default function Home() {
               <div key={item.lead} className="flex items-center gap-1">
                 <Text
                   label={item.lead}
-                  className="text-2xl text-gray-600 font-medium underline underline-offset-4"
+                  className="sm:text-2xl text-md text-gray-600 font-medium underline underline-offset-4"
                 />
                 <div className="flex flex-col">
-                  <Text label={item.desc1} className="text-xs text-gray-600 font-light" />
-                  <Text label={item.desc2} className="text-xs text-gray-600 font-light" />
+                  <Text
+                    label={item.desc1}
+                    className="sm:text-xs text-[6px] text-gray-600 font-light"
+                  />
+                  <Text
+                    label={item.desc2}
+                    className="sm:text-xs text-[6px] text-gray-600 font-light"
+                  />
                 </div>
               </div>
             ))}
@@ -225,11 +231,11 @@ export default function Home() {
 
           <div className="border border-black border-8 py-4 rounded-md mt-6">
             <div className="text-center">
-              <Text label="Create A Detailed Tutorial" className="text-4xl font-bold" />
-              <Text label="in Less than 3 clicks" className="text-4xl font-bold" />
+              <Text label="Create A Detailed Tutorial" className="sm:text-4xl text-2xl font-bold" />
+              <Text label="in Less than 3 clicks" className="sm:text-4xl text-2xl font-bold" />
               <div className="mt-6 flex items-center justify-center gap-x-6">
                 <Button
-                  className="py-6 text-3xl px-12 rounded-md bg-[#18181C] text-white flex items-center gap-2"
+                  className="sm:py-6 py-4 sm:text-3xl text-xl sm:px-12 px-4 rounded-md bg-[#18181C] text-white flex items-center gap-2"
                   type="button"
                   label="Install Wizardshot"
                   icon={
@@ -248,10 +254,10 @@ export default function Home() {
               <div className="mt-4">
                 <Text
                   label="“Has helped us write help docs 100x faster”"
-                  className="text-2xl font-medium"
+                  className="sm:text-2xl text-base font-medium"
                 />
                 <Text label="– Dany River, Cartier Informatie" className="text-xl font-light" />
-                <Text label="⭐ ⭐ ⭐ ⭐ ⭐" className="text-xl font-light" />
+                <Text label="⭐ ⭐ ⭐ ⭐ ⭐" className="sm:text-xl text-xs font-light" />
               </div>
             </div>
           </div>
@@ -279,8 +285,8 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="flex justify-between items-center mt-6">
-              <Text label="common questions" className=" font-bold text-center" />
+            <div className="flex sm:flex-row flex-col justify-between items-center mt-6">
+              <Text label="Curious to learn more? " className=" font-bold text-center" />
 
               <Button
                 className="py-2 px-4 rounded-lg bg-[#03132E] text-white"
@@ -367,59 +373,66 @@ export default function Home() {
             </div>
           </div>
 
-          <div>
-            <div className="flex items-start justify-between">
-              <div>
-                <Text label="Learn more" className="font-medium" />
+          <div className="flex items-start justify-between">
+            <div>
+              <Text label="Learn more" className="font-medium" />
 
-                <Text label="Wizardshot" className="font-light" />
-                <Text label="Community Page" className="font-light" />
-                <Text label="Help Center" className="font-light" />
-                <Text label="Security Information" className="font-light" />
-              </div>
+              <Text label="Wizardshot" className="font-light" />
+              <Text label="Community Page" className="font-light" />
+              <Text label="Help Center" className="font-light" />
+              <Text label="Security Information" className="font-light" />
+            </div>
 
-              <div>
-                <Text label="Company" className="font-medium" />
+            <div>
+              <Text label="Company" className="font-medium" />
 
-                <Text label="About Us" className="font-light" />
-                <Text label="Status Page" className="font-light" />
-              </div>
+              <Text label="About Us" className="font-light" />
+              <Text label="Status Page" className="font-light" />
             </div>
           </div>
 
-          <div>
-            <div className="flex flex-col items-end space-y-4">
-              <div>
-                <Text label="📞 +1 (833) 387 3877" className="font-light text-right" />
-                <Text label="✉️ success@wizardshot.com" className="font-light" />
-              </div>
+          <div className="flex flex-col sm:items-end items-start space-y-4">
+            <div className="hidden sm:flex sm:flex-col sm:items-end">
+              <Text label="📞 +1 (833) 387 3877" className="font-light" />
+              <Text label="✉️ success@wizardshot.com" className="font-light" />
+            </div>
 
-              <div className="flex items-center gap-2">
-                <ImageNext
-                  src="/ic_baseline-tiktok.svg"
-                  width={38}
-                  priority
-                  height={36.29}
-                  alt="logo-klikyou"
-                  className="h-[36.29px] w-auto"
-                />
+            <div className="flex items-center gap-2">
+              <ImageNext
+                src="/ic_baseline-tiktok.svg"
+                width={38}
+                priority
+                height={36.29}
+                alt="logo-klikyou"
+                className="h-[36.29px] w-auto"
+              />
 
-                <ImageNext
-                  src="/ri_instagram-fill.svg"
-                  width={38}
-                  priority
-                  height={36.29}
-                  alt="logo-klikyou"
-                  className="h-[36.29px] w-auto"
-                />
-              </div>
+              <ImageNext
+                src="/ri_instagram-fill.svg"
+                width={38}
+                priority
+                height={36.29}
+                alt="logo-klikyou"
+                className="h-[36.29px] w-auto"
+              />
+            </div>
 
-              <div className="flex items-center gap-2">
-                <Text label="Sign Up" className="font-medium" />
-                <Text label="Log in" className="font-medium" />
-              </div>
+            <div className="flex items-center gap-2">
+              <Text label="Sign Up" className="font-medium" />
+              <Text label="Log in" className="font-medium" />
             </div>
           </div>
+        </div>
+
+        <div className="my-6 space-y-6">
+          <div className="sm:hidden text-center">
+            <Text label="📞 +1 (833) 387 3877" className="font-light" />
+            <Text label="✉️ success@wizardshot.com" className="font-light" />
+          </div>
+          <Text
+            label="© 2024 Wizardshot – All rights reserved."
+            className="font-light sm:text-base text-xs text-center text-[#98A2B3]"
+          />
         </div>
       </footer>
     </div>
