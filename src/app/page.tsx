@@ -182,7 +182,7 @@ export default function Home() {
                     priority
                     height={234}
                     alt="logo-klikyou"
-                    className="h-auto sm:w-auto w-full"
+                    className="sm:h-[234px] h-auto sm:w-auto w-full sm:object-contain object-center"
                   />
 
                   <div>
@@ -263,7 +263,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10">
-            <Text label="common questions" className="text-4xl font-bold text-center" />
+            <Text label="common questions" className="sm:text-4xl text-2xl font-bold text-center" />
 
             <div className="mx-auto w-full rounded-2xl bg-white mt-10">
               {question.map((item) => (
@@ -311,9 +311,15 @@ export default function Home() {
         </div>
       </div>
 
-      <footer className="px-8">
-        <div className="p-6 bg-black rounded-lg mt-10">
-          <div className="flex justify-between items-center">
+      <footer className="px-10">
+        <div className="flex justify-end">
+          <Text
+            label="100% free, forever 🤑"
+            className="text-sm font-light leading-6 text-gray-900"
+          />
+        </div>
+        <div className="p-6 bg-black rounded-lg">
+          <div className="flex sm:flex-row flex-col justify-between sm:items-center items-end">
             <div>
               <Text label="Create Tutorials in 3 Clicks." className="font-medium text-white" />
 
@@ -323,7 +329,7 @@ export default function Home() {
               />
             </div>
 
-            <Text label="Try Wizardshot →" className="font-medium text-white" />
+            <Text label="Try Wizardshot →" className="font-medium text-white mt-6 sm:mt-0" />
           </div>
         </div>
 
