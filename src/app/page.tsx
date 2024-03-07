@@ -28,6 +28,24 @@ const card = [
   },
 ];
 
+const free = [
+  {
+    lead: "FREE",
+    desc1: "Free",
+    desc2: "Forever",
+  },
+  {
+    lead: "Unlimited",
+    desc1: "Tutorial",
+    desc2: "Creation",
+  },
+  {
+    lead: "Powerful",
+    desc1: "Editor &",
+    desc2: "Integrations",
+  },
+];
+
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -223,12 +241,57 @@ export default function Home() {
             <div className="mt-6">
               <Text
                 label="+32 MORE FEATURES"
-                className="text-lg leading-8 text-gray-600 font-bold underline underline-offset-4"
+                className="text-lg text-gray-600 font-bold underline underline-offset-4"
               />
-              <Text
-                label="INCLUDING A KB INTEGRATION"
-                className="text-lg leading-8 text-gray-600"
-              />
+              <Text label="INCLUDING A KB INTEGRATION" className="text-lg text-gray-600" />
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center mt-10 bg-free-gradient">
+            {free.map((item) => (
+              <div key={item.lead} className="flex items-center gap-1">
+                <Text
+                  label={item.lead}
+                  className="text-2xl text-gray-600 font-medium underline underline-offset-4"
+                />
+                <div className="flex flex-col">
+                  <Text label={item.desc1} className="text-xs text-gray-600 font-light" />
+                  <Text label={item.desc2} className="text-xs text-gray-600 font-light" />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="border border-black border-8 py-4 rounded-md mt-6">
+            <div className="text-center">
+              <Text label="Create A Detailed Tutorial" className="text-4xl font-bold" />
+              <Text label="in Less than 3 clicks" className="text-4xl font-bold" />
+              <div className="mt-6 flex items-center justify-center gap-x-6">
+                <Button
+                  className="py-6 text-3xl px-12 rounded-md bg-[#18181C] text-white flex items-center gap-2"
+                  type="button"
+                  label="Install Wizardshot"
+                  icon={
+                    <ImageNext
+                      src="/chrome.svg"
+                      width={19.19}
+                      priority
+                      height={19.19}
+                      alt="logo-klikyou"
+                      className="h-auto w-auto"
+                    />
+                  }
+                />
+              </div>
+
+              <div className="mt-4">
+                <Text
+                  label="“Has helped us write help docs 100x faster”"
+                  className="text-2xl font-medium"
+                />
+                <Text label="– Dany River, Cartier Informatie" className="text-xl font-light" />
+                <Text label="⭐ ⭐ ⭐ ⭐ ⭐" className="text-xl font-light" />
+              </div>
             </div>
           </div>
         </div>
