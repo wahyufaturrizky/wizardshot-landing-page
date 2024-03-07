@@ -139,7 +139,7 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:pt-56 lg:pb-10">
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
               Your Magic Wand for Instant Documentation
@@ -278,8 +278,19 @@ export default function Home() {
                 </Disclosure>
               ))}
             </div>
+
+            <div className="flex justify-between items-center mt-6">
+              <Text label="common questions" className=" font-bold text-center" />
+
+              <Button
+                className="py-2 px-4 rounded-lg bg-[#03132E] text-white"
+                type="button"
+                label="Visit Help & Community Center"
+              />
+            </div>
           </div>
         </div>
+
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
@@ -293,6 +304,124 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <footer className="px-8">
+        <div className="p-6 bg-black rounded-lg mt-10">
+          <div className="flex justify-between items-center">
+            <div>
+              <Text label="Create Tutorials in 3 Clicks." className="font-medium text-white" />
+
+              <Text
+                label="With WizardShot, You Click Capture, And We’ll Capture What’s Happening on Your Screen And Turn It Into A Tutorial."
+                className="font-thin text-white"
+              />
+            </div>
+
+            <Text label="Try Wizardshot →" className="font-medium text-white" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+          <div className="flex flex-col items-start space-y-4">
+            <ImageNext
+              src="/logo.svg"
+              width={245}
+              priority
+              height={43}
+              alt="logo-klikyou"
+              className="h-[43px] w-auto"
+            />
+
+            <Text
+              label="Turn complex process into a simple step-by step Guide"
+              className="font-medium"
+            />
+
+            <div className="flex flex-col">
+              <div className="flex items-center border-black border-4">
+                <div className="flex flex-col items-center p-2">
+                  <Text label="12" className="font-bold text" />
+                  <Text label="YEARS" className="font-bold text" />
+                </div>
+
+                <div className="flex flex-col items-center border-l-4 border-black p-2">
+                  <Text label="BUILD BY" className="font-bold text" />
+                  <ImageNext
+                    src="/vektor.svg"
+                    width={20}
+                    priority
+                    height={20}
+                    alt="logo-klikyou"
+                    className="h-[20px] w-auto"
+                  />
+                  <Text label="HELPJUICE" className="font-bold text" />
+                </div>
+              </div>
+
+              <div>
+                <Text
+                  label="#1 Rated Knowledge Base Software"
+                  className="font-bold text-[8px] border border-black border-4 p-2 text-center"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-start justify-between">
+              <div>
+                <Text label="Learn more" className="font-medium" />
+
+                <Text label="Wizardshot" className="font-light" />
+                <Text label="Community Page" className="font-light" />
+                <Text label="Help Center" className="font-light" />
+                <Text label="Security Information" className="font-light" />
+              </div>
+
+              <div>
+                <Text label="Company" className="font-medium" />
+
+                <Text label="About Us" className="font-light" />
+                <Text label="Status Page" className="font-light" />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex flex-col items-end space-y-4">
+              <div>
+                <Text label="📞 +1 (833) 387 3877" className="font-light text-right" />
+                <Text label="✉️ success@wizardshot.com" className="font-light" />
+              </div>
+
+              <div className="flex items-center gap-2">
+                <ImageNext
+                  src="/ic_baseline-tiktok.svg"
+                  width={38}
+                  priority
+                  height={36.29}
+                  alt="logo-klikyou"
+                  className="h-[36.29px] w-auto"
+                />
+
+                <ImageNext
+                  src="/ri_instagram-fill.svg"
+                  width={38}
+                  priority
+                  height={36.29}
+                  alt="logo-klikyou"
+                  className="h-[36.29px] w-auto"
+                />
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Text label="Sign Up" className="font-medium" />
+                <Text label="Log in" className="font-medium" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
