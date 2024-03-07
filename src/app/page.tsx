@@ -2,49 +2,10 @@
 import Button from "@/components/Button";
 import ImageNext from "@/components/Image";
 import Text from "@/components/Text";
-import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
-import { Dialog } from "@headlessui/react";
+import { card, free, navigation, question } from "@/utils/mock";
+import { CloseOutlined, MenuOutlined, UpOutlined } from "@ant-design/icons";
+import { Dialog, Disclosure } from "@headlessui/react";
 import { useState } from "react";
-
-const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Help Center & Community", href: "#" },
-];
-
-const card = [
-  {
-    label: "1. Click Capture",
-    desc: "Once you install the Chrome extension, fire it up, and click “Capture”.",
-  },
-  {
-    label: "2. Perform Your Actions",
-    desc: "Once capturing, Wizardshot carefully monitors what you do to understand how to document it.",
-  },
-  {
-    label: "3. ✅ Done. Article Written",
-    desc: "Wizardshot carefully crafts the perfect article based off your actions recorded. Just click “Done” and we’ll write up the article in a second.",
-  },
-];
-
-const free = [
-  {
-    lead: "FREE",
-    desc1: "Free",
-    desc2: "Forever",
-  },
-  {
-    lead: "Unlimited",
-    desc1: "Tutorial",
-    desc2: "Creation",
-  },
-  {
-    lead: "Powerful",
-    desc1: "Editor &",
-    desc2: "Integrations",
-  },
-];
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -292,6 +253,30 @@ export default function Home() {
                 <Text label="– Dany River, Cartier Informatie" className="text-xl font-light" />
                 <Text label="⭐ ⭐ ⭐ ⭐ ⭐" className="text-xl font-light" />
               </div>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <Text label="common questions" className="text-4xl font-bold text-center" />
+
+            <div className="mx-auto w-full rounded-2xl bg-white mt-10">
+              {question.map((item) => (
+                <Disclosure key={item.title}>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-gray-500 hover:bg-gray-500/10 focus:outline-none focus-visible:ring focus-visible:ring-gray-500/75">
+                        <span>{item.title}</span>
+                        <UpOutlined
+                          className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-gray-500`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="px-4 pb-2 pt-4 text-sm text-gray-500">
+                        {item.desc}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              ))}
             </div>
           </div>
         </div>
